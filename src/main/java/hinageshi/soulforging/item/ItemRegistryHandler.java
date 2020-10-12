@@ -1,7 +1,9 @@
 package hinageshi.soulforging.item;
 
+import hinageshi.soulforging.block.BlockRegistryHandler;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemBlock;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.event.RegistryEvent.Register;
@@ -14,11 +16,18 @@ import net.minecraftforge.registries.IForgeRegistry;
 @Mod.EventBusSubscriber
 public class ItemRegistryHandler {
     public static final ItemBrokenSoul BROKEN_SOUL=new ItemBrokenSoul();
+    public static final ItemBlock ITEM_SOUL_BLOCK=withRegistryName(new ItemBlock(BlockRegistryHandler.BLOCK_SOUL_BLOCK));
+
+    private static ItemBlock withRegistryName(ItemBlock item){
+        item.setRegistryName(item.getBlock().getRegistryName());
+        return item;
+    }
 
     @SubscribeEvent
     public static void onRegistry(Register<Item> event){
         IForgeRegistry<Item> registry=event.getRegistry();
         registry.register(BROKEN_SOUL);
+        registry.register(ITEM_SOUL_BLOCK);
     }
 
     @SideOnly(Side.CLIENT)
@@ -31,5 +40,6 @@ public class ItemRegistryHandler {
     @SideOnly(Side.CLIENT)
     public static void onModelRegistry(ModelRegistryEvent event) {
         registerModel(BROKEN_SOUL);
+        registerModel(ITEM_SOUL_BLOCK);
     }
 }
