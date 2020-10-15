@@ -1,3 +1,6 @@
 item.soulforging.brokenSoul.name=破损的灵魂
+item.soulforging.soulPickaxe.name=灵魂镐
+
 tile.soulforging.soulBlock.name=灵魂块
-itemGroup.soulforging=SoulForging 创造模式物品栏
+
+itemGroup.soulforging=SoulForging

@@ -1,3 +1,6 @@
 item.soulforging.brokenSoul.name=Broken Soul
+item.soulforging.soulPickaxe.name=Soul Pickaxe
+
 tile.soulforging.soulBlock.name=Soul Block
-itemGroup.soulforging=SoulForging Creative Tab
+
+itemGroup.soulforging=SoulForging
