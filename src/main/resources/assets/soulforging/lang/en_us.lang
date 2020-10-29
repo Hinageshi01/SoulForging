@@ -1,5 +1,9 @@
 item.soulforging.brokenSoul.name=Broken Soul
 item.soulforging.soulPickaxe.name=Soul Pickaxe
+item.soulforging.soulGoldArmor.feet.name=Soul Gold Boots
+item.soulforging.soulGoldArmor.legs.name=Soul Gold Leggings
+item.soulforging.soulGoldArmor.chest.name=Soul Gold Chestplate
+item.soulforging.soulGoldArmor.head.name=Soul Gold Helmet
 
 tile.soulforging.soulBlock.name=Soul Block
 
