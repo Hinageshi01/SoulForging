@@ -1,0 +1,19 @@
+{
+    "type":"minecraft:crafting_shaped",
+    "pattern":[
+        "XXX",
+        " # ",
+        " # "
+    ],
+    "key":{
+        "X":{
+            "item":"soulforging:soul_block"
+        },
+        "#":{
+            "item":"minecraft:stick"
+        }
+    },
+    "result":{
+        "item":"soulforging:soul_pickaxe"
+    }
+}

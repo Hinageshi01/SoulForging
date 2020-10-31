@@ -1,0 +1,16 @@
+{
+  "type":"minecraft:crafting_shaped",
+  "pattern":[
+    "X X",
+    "XXX",
+    "XXX"
+  ],
+  "key":{
+    "X":{
+      "item":"soulforging:soul_gold"
+    }
+  },
+  "result":{
+    "item":"soulforging:soul_gold_armor_chest"
+  }
+}
