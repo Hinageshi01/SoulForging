@@ -32,6 +32,7 @@ public class ItemRegistryHandler {
     public static final ItemBlock ITEM_SOUL_BLOCK=withRegistryName(new ItemBlock(BlockRegistryHandler.BLOCK_SOUL_BLOCK));
 
     public static final ItemBrokenSoul BROKEN_SOUL=new ItemBrokenSoul();
+    public static final ItemSoulGold SOUL_GOLD=new ItemSoulGold();
 
     private static ItemBlock withRegistryName(ItemBlock item){
         item.setRegistryName(item.getBlock().getRegistryName());
@@ -48,6 +49,7 @@ public class ItemRegistryHandler {
         registry.register(SOUL_GOLD_LEGGINGS);
         registry.register(SOUL_GOLD_CHESTPLATE);
         registry.register(SOUL_GOLD_HELMET);
+        registry.register(SOUL_GOLD);
     }
 
     @SideOnly(Side.CLIENT)
@@ -66,5 +68,6 @@ public class ItemRegistryHandler {
         registerModel(SOUL_GOLD_LEGGINGS);
         registerModel(SOUL_GOLD_CHESTPLATE);
         registerModel(SOUL_GOLD_HELMET);
+        registerModel(SOUL_GOLD);
     }
 }
