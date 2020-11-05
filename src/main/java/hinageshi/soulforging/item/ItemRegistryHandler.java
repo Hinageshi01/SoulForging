@@ -20,7 +20,7 @@ import net.minecraftforge.registries.IForgeRegistry;
 
 @EventBusSubscriber
 public class ItemRegistryHandler {
-    public static final Item.ToolMaterial SOUL_TOOL_MATERIAL= EnumHelper.addToolMaterial("SOUL",2,131,4.0F,1.0F,5);
+    public static final Item.ToolMaterial SOUL_TOOL_MATERIAL= EnumHelper.addToolMaterial("SOUL",2,131,4.0F,1.0F, 5);
     public static final ItemSoulPickaxe SOUL_PICKAXE=new ItemSoulPickaxe();
 
     public static final ItemArmor.ArmorMaterial SOUL_GOLD_ARMOR_MATERIAL=EnumHelper.addArmorMaterial("SOUL_GOLD", SoulForging.MODID + ":soul_gold",43,new int[] {4,7,9,4},9, SoundEvents.ITEM_ARMOR_EQUIP_GOLD,3);

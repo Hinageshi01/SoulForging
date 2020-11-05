@@ -10,4 +10,6 @@ item.soulforging.soulGoldArmor.head.name=Soul Gold Helmet
 
 tile.soulforging.soulBlock.name=Soul Block
 
+enchantment.soulforging.soulHartest=Soul Harvest
+
 itemGroup.soulforging=SoulForging

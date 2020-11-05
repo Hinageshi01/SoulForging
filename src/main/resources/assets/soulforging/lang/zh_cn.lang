@@ -10,4 +10,6 @@ item.soulforging.soulGoldArmor.head.name=赋魂金头盔
 
 tile.soulforging.soulBlock.name=灵魂块
 
+enchantment.soulforging.soulHartest=灵魂收割
+
 itemGroup.soulforging=SoulForging
