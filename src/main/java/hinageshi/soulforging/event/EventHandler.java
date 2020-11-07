@@ -17,6 +17,8 @@ import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.ArrayList;
 
@@ -40,6 +42,7 @@ public class EventHandler {
     }
 
     @SubscribeEvent
+    @SideOnly(Side.CLIENT)
     public static void onPlayerJoin(EntityJoinWorldEvent event){
         Entity entity=event.getEntity();
         if(entity instanceof EntityPlayer){
