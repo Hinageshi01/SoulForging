@@ -12,4 +12,6 @@ tile.soulforging.soulBlock.name=Soul Block
 
 enchantment.soulforging.soulHartest=Soul Harvest
 
+entity.soulforging.Dementor.name=Dementor
+
 itemGroup.soulforging=SoulForging
