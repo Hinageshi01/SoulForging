@@ -27,28 +27,26 @@ import static hinageshi.soulforging.item.ItemRegistryHandler.INNOCENT_SOUL;
 
 @EventBusSubscriber
 public class EventHandler {
-    private static void addItemToEntityTable(LootTableLoadEvent event,LootTable loot,String entityName,int isMob){
+    private static void addItemToEntityTable(LootTableLoadEvent event,LootTable loot,String entityName,boolean isMob){
         if(event.getName().getResourcePath().equals("entities/" + entityName)) {
-            if(isMob == 1){
-                LootUtils.addItemToTable(loot, BROKEN_SOUL, 1, 1, 1, 1, 3, 0, 1, "soulforging:broken_soul",
-                        new LootUtils.IMethod() {
-                            @Override
-                            public void FunctionsCallback(ArrayList<LootFunction> lootfuncs) {
-                                LootFunction looting= new LootingEnchantBonus(null, new RandomValueRange(0,1),0);
-                                lootfuncs.add(looting);
-                            }
+            if(isMob){
+                LootUtils.addItemToTable(loot, BROKEN_SOUL, 1, 1, 1, 1, 3, 0, 1, "soulforging:broken_soul", new LootUtils.IMethod() {
+                        @Override
+                        public void FunctionsCallback(ArrayList<LootFunction> lootfuncs) {
+                            LootFunction looting= new LootingEnchantBonus(null, new RandomValueRange(0,1),0);
+                            lootfuncs.add(looting);
                         }
+                    }
                 );
             }
             else {
-                LootUtils.addItemToTable(loot, INNOCENT_SOUL, 1, 1, 1, 1, 3, 0, 1, "soulforging:innocent_soul",
-                        new LootUtils.IMethod() {
-                            @Override
-                            public void FunctionsCallback(ArrayList<LootFunction> lootfuncs) {
-                                LootFunction looting= new LootingEnchantBonus(null, new RandomValueRange(1,3),0);
-                                lootfuncs.add(looting);
-                            }
+                LootUtils.addItemToTable(loot, INNOCENT_SOUL, 1, 1, 1, 1, 3, 0, 1, "soulforging:innocent_soul", new LootUtils.IMethod() {
+                        @Override
+                        public void FunctionsCallback(ArrayList<LootFunction> lootfuncs) {
+                            LootFunction looting= new LootingEnchantBonus(null, new RandomValueRange(1,3),0);
+                            lootfuncs.add(looting);
                         }
+                    }
                 );
             }
         }
@@ -57,29 +55,29 @@ public class EventHandler {
     @SubscribeEvent
     public static void onLootLoad(LootTableLoadEvent event){
         LootTable loot = event.getTable();
-        addItemToEntityTable(event,loot,"blaze",1);
-        addItemToEntityTable(event,loot,"chicken",0);
-        addItemToEntityTable(event,loot,"cow",0);
-        addItemToEntityTable(event,loot,"creeper",1);
-        addItemToEntityTable(event,loot,"enderman",1);
-        addItemToEntityTable(event,loot,"ghast",1);
-        addItemToEntityTable(event,loot,"iron_golem",0);
-        addItemToEntityTable(event,loot,"pig",0);
-        addItemToEntityTable(event,loot,"sheep",0);
-        addItemToEntityTable(event,loot,"silverfish",1);
-        addItemToEntityTable(event,loot,"skeleton",1);
-        addItemToEntityTable(event,loot,"slime",1);
-        addItemToEntityTable(event,loot,"snowman",0);
-        addItemToEntityTable(event,loot,"spider",1);
-        addItemToEntityTable(event,loot,"squid",0);
-        addItemToEntityTable(event,loot,"villager",0);
-        addItemToEntityTable(event,loot,"witch",1);
-        addItemToEntityTable(event,loot,"wolf",0);
-        addItemToEntityTable(event,loot,"zombie",1);
+        addItemToEntityTable(event,loot,"blaze",true);
+        addItemToEntityTable(event,loot,"chicken",false);
+        addItemToEntityTable(event,loot,"cow",false);
+        addItemToEntityTable(event,loot,"creeper",true);
+        addItemToEntityTable(event,loot,"enderman",true);
+        addItemToEntityTable(event,loot,"ghast",true);
+        addItemToEntityTable(event,loot,"iron_golem",false);
+        addItemToEntityTable(event,loot,"pig",false);
+        addItemToEntityTable(event,loot,"sheep",false);
+        addItemToEntityTable(event,loot,"silverfish",true);
+        addItemToEntityTable(event,loot,"skeleton",true);
+        addItemToEntityTable(event,loot,"slime",true);
+        addItemToEntityTable(event,loot,"snowman",false);
+        addItemToEntityTable(event,loot,"spider",true);
+        addItemToEntityTable(event,loot,"squid",false);
+        addItemToEntityTable(event,loot,"villager",false);
+        addItemToEntityTable(event,loot,"witch",true);
+        addItemToEntityTable(event,loot,"wolf",false);
+        addItemToEntityTable(event,loot,"zombie",true);
 
+        //Specially handle BOSS's drop
         if(event.getName().getResourcePath().equals("entities/elder_guardian"))
             LootUtils.addItemToTable(loot, BROKEN_SOUL, 1, 1, 1, 1, 3, 0, 1, "soulforging:broken_soul");
-
         if(event.getName().getResourcePath().equals("entities/ender_dragon"))
             LootUtils.addItemToTable(loot, BROKEN_SOUL, 1, 1, 1, 1, 3, 0, 1, "soulforging:broken_soul");
     }
@@ -104,7 +102,7 @@ public class EventHandler {
             int level= EnchantmentHelper.getEnchantmentLevel(EnchantmentRegistryHandler.SOUL_HARVEST,heldItemMainhand);
             Entity target=event.getEntity();
             if(level > 0){
-                //掉落更多灵魂
+                //Drop more soul
             }
         }
     }

@@ -45,7 +45,7 @@ public class EntityDementor extends EntityMob {
         this.tasks.addTask(4,new EntityAIWatchClosest(this, EntityPlayer.class,8.0F));
         this.tasks.addTask(5,new EntityAILookIdle(this));
 
-        //this.targetTasks.addTask(0,new EntityAIHurtByTarget(this,false));
-        this.targetTasks.addTask(0,new EntityAINearestAttackableTarget<>(this,EntityPlayer.class,true));
+        //this.targetTasks.addTask(0,new EntityAIHurtByTarget(this,false));//Only attack when hurt by target
+        this.targetTasks.addTask(0,new EntityAINearestAttackableTarget<>(this,EntityPlayer.class,true));//Initiative attack
     }
 }

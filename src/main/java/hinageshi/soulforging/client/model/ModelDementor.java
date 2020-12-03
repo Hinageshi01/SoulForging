@@ -132,22 +132,25 @@ public class ModelDementor extends ModelBase {
 	@Override
 	public void setRotationAngles(float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, float scaleFactor, Entity entityIn) {
 		final float A1=0.45F,A2=0.1F,w1=2.0F,w2=1.0F,pi=(float)Math.PI;
+		//The line of sight follows player
 		//head.rotateAngleX = pi / 180 * headPitch;
 		//head.rotateAngleY = pi / 180 * netHeadYaw;
 
+		//All right legs move motion
 		r1.rotateAngleX = A1 * MathHelper.cos(limbSwing * w1 + pi) * limbSwingAmount;
 		r2.rotateAngleX = A1 * MathHelper.cos(limbSwing * w1 ) * limbSwingAmount;
 		r3.rotateAngleX = A1 * MathHelper.cos(limbSwing * w1 + pi) * limbSwingAmount;
 		r4.rotateAngleX = A1 * MathHelper.cos(limbSwing * w1 ) * limbSwingAmount;
 
+		//All left legs move motion
 		l1.rotateAngleX = A1 * MathHelper.cos(limbSwing * w1 ) * limbSwingAmount;
 		l2.rotateAngleX = A1 * MathHelper.cos(limbSwing * w1 + pi) * limbSwingAmount;
 		l3.rotateAngleX = A1 * MathHelper.cos(limbSwing * w1 ) * limbSwingAmount;
 		l4.rotateAngleX = A1 * MathHelper.cos(limbSwing * w1 + pi) * limbSwingAmount;
 
+		//Body creep
 		head.rotateAngleY = A2 * MathHelper.cos(ageInTicks * w2 + pi * 1/5);
-		//head.rotateAngleZ=(float)(ageInTicks % (2 * pi));
-
+		//head.rotateAngleZ=(float)(ageInTicks % (2 * pi));//Just for fun
 		b1.rotateAngleY = A2 * MathHelper.cos(ageInTicks * w2 + pi * 2/5);
 
 		b2.rotateAngleY = A2 * MathHelper.cos(ageInTicks * w2 + pi * 3/5);
@@ -158,7 +161,7 @@ public class ModelDementor extends ModelBase {
 
 		b3.rotateAngleY = A2 * MathHelper.cos(ageInTicks * w2 + pi * 4/5);
 
-		b4.rotateAngleY = A2 * MathHelper.cos(ageInTicks * w2 + pi);
+		b4.rotateAngleY = A2 * MathHelper.cos(ageInTicks * w2 + pi);//+ pi * 5/5
 		r3.rotateAngleY = A2 * MathHelper.cos(ageInTicks * w2 + pi);
 		r4.rotateAngleY = A2 * MathHelper.cos(ageInTicks * w2 + pi);
 		l3.rotateAngleY = A2 * MathHelper.cos(ageInTicks * w2 + pi);

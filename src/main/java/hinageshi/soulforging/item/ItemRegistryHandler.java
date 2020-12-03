@@ -44,6 +44,7 @@ public class ItemRegistryHandler {
     public static void onRegistry(Register<Item> event){
         IForgeRegistry<Item> registry=event.getRegistry();
         registry.register(BROKEN_SOUL);
+        registry.register(INNOCENT_SOUL);
         registry.register(ITEM_SOUL_BLOCK);
         registry.register(SOUL_PICKAXE);
         registry.register(SOUL_GOLD_BOOTS);
@@ -51,7 +52,6 @@ public class ItemRegistryHandler {
         registry.register(SOUL_GOLD_CHESTPLATE);
         registry.register(SOUL_GOLD_HELMET);
         registry.register(SOUL_GOLD);
-        registry.register(INNOCENT_SOUL);
     }
 
     @SideOnly(Side.CLIENT)
@@ -64,6 +64,7 @@ public class ItemRegistryHandler {
     @SideOnly(Side.CLIENT)
     public static void onModelRegistry(ModelRegistryEvent event) {
         registerModel(BROKEN_SOUL);
+        registerModel(INNOCENT_SOUL);
         registerModel(ITEM_SOUL_BLOCK);
         registerModel(SOUL_PICKAXE);
         registerModel(SOUL_GOLD_BOOTS);
@@ -71,6 +72,5 @@ public class ItemRegistryHandler {
         registerModel(SOUL_GOLD_CHESTPLATE);
         registerModel(SOUL_GOLD_HELMET);
         registerModel(SOUL_GOLD);
-        registerModel(INNOCENT_SOUL);
     }
 }
