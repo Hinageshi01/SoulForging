@@ -9,10 +9,12 @@ import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.ai.attributes.IAttributeInstance;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Biomes;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
 
 import java.util.UUID;
 
@@ -20,6 +22,7 @@ public class EntityDementor extends EntityMob {
     public static final String ID = "dementor";
     public static final String NAME = SoulForging.MODID + ".Dementor";
     private static final UUID SPEED_BOOST =UUID.fromString("e0b89eca-304c-460c-a19b-fcde3b5944ba");
+    public static final Biome[] BIOMES=new Biome[]{Biomes.PLAINS,Biomes.HELL,Biomes.FOREST,Biomes.SWAMPLAND,Biomes.RIVER,Biomes.JUNGLE,Biomes.DESERT,Biomes.TAIGA};
 
     public EntityDementor(World worldIn){
         super(worldIn);

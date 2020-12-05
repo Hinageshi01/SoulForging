@@ -13,6 +13,6 @@ tile.soulforging.soulBlock.name=灵魂块
 
 enchantment.soulforging.soulHartest=灵魂收割
 
-entity.soulforging.Dementor.name=摄魂怪
+entity.soulforging.Dementor.name=噬魂怪
 
 itemGroup.soulforging=SoulForging
