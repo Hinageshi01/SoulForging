@@ -10,6 +10,7 @@ item.soulforging.soulGoldArmor.chest.name=赋魂金胸甲
 item.soulforging.soulGoldArmor.head.name=赋魂金头盔
 
 tile.soulforging.soulBlock.name=灵魂块
+tile.soulforging.soulForgingFurnace.name=锻魂炉
 
 enchantment.soulforging.soulHartest=灵魂收割
 

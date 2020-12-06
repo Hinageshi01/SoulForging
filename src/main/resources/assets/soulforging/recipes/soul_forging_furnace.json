@@ -1,0 +1,22 @@
+{
+  "type":"minecraft:crafting_shaped",
+  "pattern":[
+    "XXX",
+    "XYX",
+    "XZX"
+  ],
+  "key":{
+    "X":{
+      "item":"soulforging:soul_block"
+    },
+    "Y":{
+      "item":"minecraft:iron_ingot"
+    },
+    "Z":{
+      "item":"soulforging:broken_soul"
+    }
+  },
+  "result":{
+    "item":"soulforging:soul_forging_furnace"
+  }
+}

@@ -30,6 +30,7 @@ public class ItemRegistryHandler {
     public static final ItemSoulGoldArmor SOUL_GOLD_HELMET=new ItemSoulGoldArmor(EntityEquipmentSlot.HEAD);
 
     public static final ItemBlock ITEM_SOUL_BLOCK=withRegistryName(new ItemBlock(BlockRegistryHandler.BLOCK_SOUL_BLOCK));
+    public static final ItemBlock ITEM_SOUL_FORGING_FURNACE=withRegistryName(new ItemBlock(BlockRegistryHandler.BLOCK_SOUL_FORGING_FURNACE));
 
     public static final ItemBrokenSoul BROKEN_SOUL=new ItemBrokenSoul();
     public static final ItemInnocentSoul INNOCENT_SOUL=new ItemInnocentSoul();
@@ -52,6 +53,7 @@ public class ItemRegistryHandler {
         registry.register(SOUL_GOLD_CHESTPLATE);
         registry.register(SOUL_GOLD_HELMET);
         registry.register(SOUL_GOLD);
+        registry.register(ITEM_SOUL_FORGING_FURNACE);
     }
 
     @SideOnly(Side.CLIENT)
@@ -72,5 +74,6 @@ public class ItemRegistryHandler {
         registerModel(SOUL_GOLD_CHESTPLATE);
         registerModel(SOUL_GOLD_HELMET);
         registerModel(SOUL_GOLD);
+        registerModel(ITEM_SOUL_FORGING_FURNACE);
     }
 }
