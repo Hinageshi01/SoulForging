@@ -69,7 +69,6 @@ public class EventHandler {
         addItemToEntityTable(event,loot,"slime",true);
         addItemToEntityTable(event,loot,"snowman",false);
         addItemToEntityTable(event,loot,"spider",true);
-        addItemToEntityTable(event,loot,"squid",false);
         addItemToEntityTable(event,loot,"villager",false);
         addItemToEntityTable(event,loot,"witch",true);
         addItemToEntityTable(event,loot,"wolf",false);

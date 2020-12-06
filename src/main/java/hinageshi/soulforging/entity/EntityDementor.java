@@ -11,18 +11,21 @@ import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Biomes;
 import net.minecraft.init.Blocks;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.storage.loot.LootTableList;
 
 import java.util.UUID;
 
 public class EntityDementor extends EntityMob {
     public static final String ID = "dementor";
     public static final String NAME = SoulForging.MODID + ".Dementor";
-    private static final UUID SPEED_BOOST =UUID.fromString("e0b89eca-304c-460c-a19b-fcde3b5944ba");
-    public static final Biome[] BIOMES=new Biome[]{Biomes.PLAINS,Biomes.HELL,Biomes.FOREST,Biomes.SWAMPLAND,Biomes.RIVER,Biomes.JUNGLE,Biomes.DESERT,Biomes.TAIGA};
+    private static final UUID SPEED_BOOST = UUID.fromString("e0b89eca-304c-460c-a19b-fcde3b5944ba");
+    public static final Biome[] BIOMES = new Biome[]{Biomes.PLAINS,Biomes.HELL,Biomes.FOREST,Biomes.SWAMPLAND,Biomes.RIVER,Biomes.JUNGLE,Biomes.DESERT,Biomes.TAIGA};//spawn environment
+    private static final ResourceLocation LOOT_TABLE = LootTableList.register(new ResourceLocation(SoulForging.MODID+":entities/dementor"));
 
     public EntityDementor(World worldIn){
         super(worldIn);
@@ -62,7 +65,7 @@ public class EntityDementor extends EntityMob {
     }
 
     @Override
-    protected void applyEntityAttributes(){
+    protected void applyEntityAttributes(){//Set basic data
         super.applyEntityAttributes();
         this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(25.0);
         this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(3.0);
@@ -70,7 +73,7 @@ public class EntityDementor extends EntityMob {
     }
 
     @Override
-    public void setAttackTarget(EntityLivingBase entity){
+    public void setAttackTarget(EntityLivingBase entity){//Change speed when attack
         super.setAttackTarget(entity);
         IAttributeInstance attribute=this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED);
         if(entity==null){
@@ -82,9 +85,14 @@ public class EntityDementor extends EntityMob {
     }
 
     @Override
-    public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty,IEntityLivingData data){
+    public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty,IEntityLivingData data){//Max health floating
         IAttributeInstance attribute=this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH);
         attribute.applyModifier(new AttributeModifier("Health boost",this.rand.nextInt(6),0));
         return super.onInitialSpawn(difficulty,data);
+    }
+
+    @Override
+    protected ResourceLocation getLootTable(){//Apply the loot table
+        return LOOT_TABLE;
     }
 }
