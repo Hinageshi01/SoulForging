@@ -33,7 +33,13 @@ public class GuiSoulForgingFurnace extends GuiContainer {
         int top=(this.height-this.ySize)/2;
         GlStateManager.color(1.0F,1.0F,1.0F,1.0F);
         this.mc.getTextureManager().bindTexture(TEXTURE);
-        this.drawTexturedModalRect(left,top,0,0,this.xSize,this.ySize);
+        this.drawTexturedModalRect(left+0,top+0,0,0,this.xSize,this.ySize);
+
+        int barHeight=17;
+        int barWidth=Math.round(((ContainerSoulForgingFurnace) this.inventorySlots).getCompressorProgress() * 0.1F);
+        int barHeightFire=14-Math.round(((ContainerSoulForgingFurnace) this.inventorySlots).getCompressorProgress() * 0.05F);//14->0
+        this.drawTexturedModalRect(left+89,top+38,176,14,barWidth,barHeight);
+        this.drawTexturedModalRect(left+44,top+38+barHeightFire,176,barHeightFire,14,14-barHeightFire);
     }
 
     @Override
