@@ -1,6 +1,8 @@
 package hinageshi.soulforging.block;
 
+import hinageshi.soulforging.tileentity.TileEntitySoulForgingFurnace;
 import net.minecraft.block.Block;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.event.RegistryEvent.Register;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -16,5 +18,6 @@ public class BlockRegistryHandler {
         IForgeRegistry<Block> registry=event.getRegistry();
         registry.register(BLOCK_SOUL_BLOCK);
         registry.register(BLOCK_SOUL_FORGING_FURNACE);
+        TileEntity.register(TileEntitySoulForgingFurnace.ID,TileEntitySoulForgingFurnace.class);
     }
 }

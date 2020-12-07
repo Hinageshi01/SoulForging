@@ -16,8 +16,8 @@ public class GuiSoulForgingFurnace extends GuiContainer {
 
     public GuiSoulForgingFurnace(EntityPlayer player, World world,int x,int y,int z){
         super(new ContainerSoulForgingFurnace(player,world,x,y,z));
-        this.xSize=176;
-        this.ySize=176;//176*176 Gui in a 256*256 picture
+        this.xSize=175;
+        this.ySize=165;//175*165 Gui in a 256*256 picture
     }
 
     @Override
