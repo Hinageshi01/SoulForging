@@ -1,6 +1,7 @@
 package hinageshi.soulforging;
 
 import hinageshi.soulforging.client.renderer.RenderRegistryHandler;
+import hinageshi.soulforging.network.NetworkRegistryHandler;
 import net.minecraft.init.Blocks;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -26,9 +27,10 @@ public class SoulForging
     }
 
     @EventHandler
-    public void preInit(FMLPreInitializationEvent event)
+     public void preInit(FMLPreInitializationEvent event)
     {
         logger = event.getModLog();
+        NetworkRegistryHandler.register();
     }
 
     @EventHandler
