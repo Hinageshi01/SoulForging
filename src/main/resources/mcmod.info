@@ -7,8 +7,8 @@
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
-  "authorList": ["Hinageshi"],
-  "credits": "t2ake, Guoguang, AdamXuD",
+  "authorList": ["Hinageshi","t2ake"],
+  "credits": "Made possible with help from Guoguang and AdamXuD",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []

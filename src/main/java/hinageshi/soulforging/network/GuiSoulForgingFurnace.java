@@ -37,7 +37,7 @@ public class GuiSoulForgingFurnace extends GuiContainer {
 
         int barHeight=17;
         int barWidth=Math.round(((ContainerSoulForgingFurnace) this.inventorySlots).getCompressorProgress() * 0.1F);
-        int barHeightFire=14-Math.round(((ContainerSoulForgingFurnace) this.inventorySlots).getCompressorProgress() * 0.05F);//14->0
+        int barHeightFire=14-Math.round(((ContainerSoulForgingFurnace) this.inventorySlots).getCompressorProgress() * 0.0583333333333F);//14->0
         this.drawTexturedModalRect(left+89,top+38,176,14,barWidth,barHeight);
         this.drawTexturedModalRect(left+44,top+38+barHeightFire,176,barHeightFire,14,14-barHeightFire);
     }
