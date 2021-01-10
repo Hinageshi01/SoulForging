@@ -2,7 +2,6 @@ package hinageshi.soulforging.tileentity;
 
 import hinageshi.soulforging.SoulForging;
 import hinageshi.soulforging.item.ItemRegistryHandler;
-import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -76,23 +75,23 @@ public class TileEntitySoulForgingFurnace extends TileEntity implements ITickabl
         boolean canExtractInput=coal.equals(this.down.extractItem(0,1,true).getItem());
         if(canExtractInput){
             if(this.compressorProgress % 20 == 0){//Each 20 ticks
-                Item soul= ItemRegistryHandler.BROKEN_SOUL;
+                Item soul= ItemRegistryHandler.ITEM_PURE_SOUL;
                 boolean canExtractSoul=soul.equals(this.left.extractItem(0,1,true).getItem());
                 if(canExtractSoul){
                     this.left.extractItem(0,1,false);
-                    this.compressorProgress +=1;
+                    this.compressorProgress += 1;
                 }
             }
             else {
-                this.compressorProgress +=1;
+                this.compressorProgress += 1;
                 if(this.compressorProgress >= 240){
-                    ItemStack soulGold=new ItemStack(ItemRegistryHandler.SOUL_GOLD);
-                    boolean canInsertSoulDold=this.side.insertItem(0,soulGold,true).isEmpty();
-                    if(canInsertSoulDold){
+                    ItemStack soulGold=new ItemStack(ItemRegistryHandler.ITEM_SOUL_GOLD);
+                    boolean canInsertSoulGold=this.side.insertItem(0,soulGold,true).isEmpty();
+                    if(canInsertSoulGold){
                         this.side.insertItem(0,soulGold,false);
                         this.right.extractItem(0,1,false);
                         this.down.extractItem(0,1,false);
-                        this.compressorProgress=0;
+                        this.compressorProgress = 0;
                     }
                     else {
                         this.compressorProgress -= 1;

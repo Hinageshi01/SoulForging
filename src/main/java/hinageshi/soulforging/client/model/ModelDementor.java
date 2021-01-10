@@ -129,6 +129,7 @@ public class ModelDementor extends ModelBase {
 		modelRenderer.rotateAngleY = y;
 		modelRenderer.rotateAngleZ = z;
 	}
+
 	@Override
 	public void setRotationAngles(float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, float scaleFactor, Entity entityIn) {
 		final float A1=0.45F,A2=0.1F,w1=2.0F,w2=1.0F,pi=(float)Math.PI;

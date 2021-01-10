@@ -1,0 +1,15 @@
+{
+  "type":"minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item":"soulforging:innocent_soul"
+    },
+    {
+      "item":"soulforging:crystallized_soul"
+    }
+  ],
+  "result":{
+    "item":"soulforging:pure_soul",
+    "count": 1
+  }
+}

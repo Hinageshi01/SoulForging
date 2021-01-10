@@ -60,7 +60,7 @@ public class ContainerSoulForgingFurnace extends Container {
     }
 
     @Override
-    public void detectAndSendChanges(){//Send progress bar data from server to client
+    public void detectAndSendChanges(){//Send progress bar data to client from server
         super.detectAndSendChanges();
         TileEntity tileEntity=this.world.getTileEntity(this.pos);
         if(tileEntity instanceof TileEntitySoulForgingFurnace){

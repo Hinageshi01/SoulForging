@@ -23,7 +23,7 @@ public class ItemRegistryHandler {
     public static final Item.ToolMaterial SOUL_TOOL_MATERIAL= EnumHelper.addToolMaterial("SOUL",2,131,4.0F,1.0F, 5);
     public static final ItemSoulPickaxe SOUL_PICKAXE=new ItemSoulPickaxe();
 
-    public static final ItemArmor.ArmorMaterial SOUL_GOLD_ARMOR_MATERIAL=EnumHelper.addArmorMaterial("SOUL_GOLD", SoulForging.MODID + ":soul_gold",43,new int[] {4,7,9,4},9, SoundEvents.ITEM_ARMOR_EQUIP_GOLD,3);
+    public static final ItemArmor.ArmorMaterial SOUL_GOLD_ARMOR_MATERIAL=EnumHelper.addArmorMaterial("ITEM_SOUL_GOLD", SoulForging.MODID + ":soul_gold",43,new int[] {4,7,9,4},9, SoundEvents.ITEM_ARMOR_EQUIP_GOLD,3);
     public static final ItemSoulGoldArmor SOUL_GOLD_BOOTS=new ItemSoulGoldArmor(EntityEquipmentSlot.FEET);
     public static final ItemSoulGoldArmor SOUL_GOLD_LEGGINGS=new ItemSoulGoldArmor(EntityEquipmentSlot.LEGS);
     public static final ItemSoulGoldArmor SOUL_GOLD_CHESTPLATE=new ItemSoulGoldArmor(EntityEquipmentSlot.CHEST);
@@ -32,9 +32,12 @@ public class ItemRegistryHandler {
     public static final ItemBlock ITEM_SOUL_BLOCK=withRegistryName(new ItemBlock(BlockRegistryHandler.BLOCK_SOUL_BLOCK));
     public static final ItemBlock ITEM_SOUL_FORGING_FURNACE=withRegistryName(new ItemBlock(BlockRegistryHandler.BLOCK_SOUL_FORGING_FURNACE));
 
-    public static final ItemBrokenSoul BROKEN_SOUL=new ItemBrokenSoul();
-    public static final ItemInnocentSoul INNOCENT_SOUL=new ItemInnocentSoul();
-    public static final ItemSoulGold SOUL_GOLD=new ItemSoulGold();
+    public static final ItemBrokenSoul ITEM_BROKEN_SOUL =new ItemBrokenSoul();
+    public static final ItemInnocentSoul ITEM_INNOCENT_SOUL =new ItemInnocentSoul();
+    public static final ItemCrystallizedSoul ITEM_CRYSTALLIZED_SOUL=new ItemCrystallizedSoul();
+    public static final ItemPureSoul ITEM_PURE_SOUL =new ItemPureSoul();
+    public static final ItemSoulGold ITEM_SOUL_GOLD =new ItemSoulGold();
+
 
     private static ItemBlock withRegistryName(ItemBlock item){
         item.setRegistryName(item.getBlock().getRegistryName());
@@ -44,15 +47,17 @@ public class ItemRegistryHandler {
     @SubscribeEvent
     public static void onRegistry(Register<Item> event){
         IForgeRegistry<Item> registry=event.getRegistry();
-        registry.register(BROKEN_SOUL);
-        registry.register(INNOCENT_SOUL);
+        registry.register(ITEM_BROKEN_SOUL);
+        registry.register(ITEM_INNOCENT_SOUL);
+        registry.register(ITEM_CRYSTALLIZED_SOUL);
+        registry.register(ITEM_PURE_SOUL);
         registry.register(ITEM_SOUL_BLOCK);
         registry.register(SOUL_PICKAXE);
         registry.register(SOUL_GOLD_BOOTS);
         registry.register(SOUL_GOLD_LEGGINGS);
         registry.register(SOUL_GOLD_CHESTPLATE);
         registry.register(SOUL_GOLD_HELMET);
-        registry.register(SOUL_GOLD);
+        registry.register(ITEM_SOUL_GOLD);
         registry.register(ITEM_SOUL_FORGING_FURNACE);
     }
 
@@ -65,15 +70,17 @@ public class ItemRegistryHandler {
     @SubscribeEvent
     @SideOnly(Side.CLIENT)
     public static void onModelRegistry(ModelRegistryEvent event) {
-        registerModel(BROKEN_SOUL);
-        registerModel(INNOCENT_SOUL);
+        registerModel(ITEM_BROKEN_SOUL);
+        registerModel(ITEM_INNOCENT_SOUL);
+        registerModel(ITEM_CRYSTALLIZED_SOUL);
+        registerModel(ITEM_PURE_SOUL);
         registerModel(ITEM_SOUL_BLOCK);
         registerModel(SOUL_PICKAXE);
         registerModel(SOUL_GOLD_BOOTS);
         registerModel(SOUL_GOLD_LEGGINGS);
         registerModel(SOUL_GOLD_CHESTPLATE);
         registerModel(SOUL_GOLD_HELMET);
-        registerModel(SOUL_GOLD);
+        registerModel(ITEM_SOUL_GOLD);
         registerModel(ITEM_SOUL_FORGING_FURNACE);
     }
 }

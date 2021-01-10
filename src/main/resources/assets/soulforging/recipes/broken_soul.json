@@ -2,8 +2,7 @@
   "type":"minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item":"soulforging:soul_block",
-      "data":0
+      "item":"soulforging:soul_block"
     }
   ],
   "result":{

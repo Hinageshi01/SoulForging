@@ -1,6 +1,7 @@
 package hinageshi.soulforging;
 
 import hinageshi.soulforging.client.renderer.RenderRegistryHandler;
+import hinageshi.soulforging.crafting.FurnaceRecipeRegistryHandler;
 import hinageshi.soulforging.network.NetworkRegistryHandler;
 import net.minecraft.init.Blocks;
 import net.minecraftforge.fml.common.Mod;
@@ -36,6 +37,6 @@ public class SoulForging
     @EventHandler
     public void init(FMLInitializationEvent event)
     {
-        logger.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
+        FurnaceRecipeRegistryHandler.register();
     }
 }
