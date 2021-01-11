@@ -99,10 +99,10 @@ public class EventHandler {
         if(source instanceof EntityPlayer && !source.world.isRemote){
             EntityPlayer player=(EntityPlayer) source;
             ItemStack heldItemMainhand=player.getHeldItemMainhand();
-            int level= EnchantmentHelper.getEnchantmentLevel(EnchantmentRegistryHandler.SOUL_HARVEST,heldItemMainhand);
-            Entity target=event.getEntity();
+            int level= EnchantmentHelper.getEnchantmentLevel(EnchantmentRegistryHandler.SOUL_BLAST,heldItemMainhand);
             if(level > 0){
-                //DO SOMETHING
+                Entity target=event.getEntity();
+                target.world.createExplosion(null,target.posX,target.posY,target.posZ,level,false);
             }
         }
     }

@@ -5,11 +5,11 @@ import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnumEnchantmentType;
 import net.minecraft.inventory.EntityEquipmentSlot;
 
-public class EnchantmentSoulHarvest extends Enchantment {
-    public EnchantmentSoulHarvest(){
+public class EnchantmentSoulBlast extends Enchantment {
+    public EnchantmentSoulBlast(){
         super(Rarity.RARE, EnumEnchantmentType.WEAPON,new EntityEquipmentSlot[] {EntityEquipmentSlot.MAINHAND});
-        this.setName(SoulForging.MODID + ".soulHarvest");
-        this.setRegistryName("soulHarvest");
+        this.setName(SoulForging.MODID + ".soulBlast");
+        this.setRegistryName("soulBlast");
     }
 
     @Override
