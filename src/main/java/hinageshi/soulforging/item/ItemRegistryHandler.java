@@ -21,9 +21,11 @@ import net.minecraftforge.registries.IForgeRegistry;
 @EventBusSubscriber
 public class ItemRegistryHandler {
     public static final Item.ToolMaterial SOUL_TOOL_MATERIAL= EnumHelper.addToolMaterial("SOUL",2,131,4.0F,1.0F, 5);
+    public static final Item.ToolMaterial SOUL_GOLD_TOOL_MATERIAL= EnumHelper.addToolMaterial("SOUL_GOLD",3,1561,12.0F,6.5F, 44);//Diamond's maxUse is 1561, gold's efficiency is 11.25, gold's enchantability is 22
     public static final ItemSoulPickaxe SOUL_PICKAXE=new ItemSoulPickaxe();
+    public static final ItemSoulGoldSword SOUL_GOLD_SWORD=new ItemSoulGoldSword();
 
-    public static final ItemArmor.ArmorMaterial SOUL_GOLD_ARMOR_MATERIAL=EnumHelper.addArmorMaterial("ITEM_SOUL_GOLD", SoulForging.MODID + ":soul_gold",43,new int[] {4,7,9,4},9, SoundEvents.ITEM_ARMOR_EQUIP_GOLD,3);
+    public static final ItemArmor.ArmorMaterial SOUL_GOLD_ARMOR_MATERIAL=EnumHelper.addArmorMaterial("SOUL_GOLD", SoulForging.MODID + ":soul_gold",43,new int[] {4,7,9,4},9, SoundEvents.ITEM_ARMOR_EQUIP_GOLD,3);
     public static final ItemSoulGoldArmor SOUL_GOLD_BOOTS=new ItemSoulGoldArmor(EntityEquipmentSlot.FEET);
     public static final ItemSoulGoldArmor SOUL_GOLD_LEGGINGS=new ItemSoulGoldArmor(EntityEquipmentSlot.LEGS);
     public static final ItemSoulGoldArmor SOUL_GOLD_CHESTPLATE=new ItemSoulGoldArmor(EntityEquipmentSlot.CHEST);
@@ -53,6 +55,7 @@ public class ItemRegistryHandler {
         registry.register(ITEM_PURE_SOUL);
         registry.register(ITEM_SOUL_BLOCK);
         registry.register(SOUL_PICKAXE);
+        registry.register(SOUL_GOLD_SWORD);
         registry.register(SOUL_GOLD_BOOTS);
         registry.register(SOUL_GOLD_LEGGINGS);
         registry.register(SOUL_GOLD_CHESTPLATE);
@@ -76,6 +79,7 @@ public class ItemRegistryHandler {
         registerModel(ITEM_PURE_SOUL);
         registerModel(ITEM_SOUL_BLOCK);
         registerModel(SOUL_PICKAXE);
+        registerModel(SOUL_GOLD_SWORD);
         registerModel(SOUL_GOLD_BOOTS);
         registerModel(SOUL_GOLD_LEGGINGS);
         registerModel(SOUL_GOLD_CHESTPLATE);
