@@ -6,6 +6,6 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class FurnaceRecipeRegistryHandler {
     public static void register(){
-        GameRegistry.addSmelting(ItemRegistryHandler.ITEM_SOUL_BLOCK,new ItemStack(ItemRegistryHandler.ITEM_CRYSTALLIZED_SOUL),0.2F);
+        GameRegistry.addSmelting(ItemRegistryHandler.ITEM_BROKEN_SOUL,new ItemStack(ItemRegistryHandler.ITEM_CRYSTALLIZED_SOUL),0.5F);
     }
 }

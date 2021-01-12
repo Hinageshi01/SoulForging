@@ -77,9 +77,9 @@ public class EventHandler {
 
         //Specially handle BOSS's drop
         if(event.getName().getResourcePath().equals("entities/elder_guardian"))
-            LootUtils.addItemToTable(loot, ITEM_BROKEN_SOUL, 1, 1, 1, 1, 3, 0, 1, "soulforging:broken_soul");
+            LootUtils.addItemToTable(loot, ITEM_BROKEN_SOUL, 1, 1, 1, 5, 9, 0, 1, "soulforging:pure_soul");
         if(event.getName().getResourcePath().equals("entities/ender_dragon"))
-            LootUtils.addItemToTable(loot, ITEM_BROKEN_SOUL, 1, 1, 1, 1, 3, 0, 1, "soulforging:broken_soul");
+            LootUtils.addItemToTable(loot, ITEM_BROKEN_SOUL, 1, 1, 1, 5, 9, 0, 1, "soulforging:pure_soul");
     }
 
     @SubscribeEvent
