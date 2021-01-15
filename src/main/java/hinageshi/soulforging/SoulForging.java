@@ -12,13 +12,12 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.apache.logging.log4j.Logger;
 
-@Mod(modid = SoulForging.MODID, name = SoulForging.NAME, version = SoulForging.VERSION,acceptedMinecraftVersions="[1.12,1.13)")
+@Mod(modid = SoulForging.MODID, name = SoulForging.NAME, version = SoulForging.VERSION, acceptedMinecraftVersions = "[1.12,1.13)")
 public class SoulForging
 {
     public static final String MODID = "soulforging";
     public static final String NAME = "SoulForging";
     public static final String VERSION = "1.0.0";
-
     private static Logger logger;
 
     @EventHandler
