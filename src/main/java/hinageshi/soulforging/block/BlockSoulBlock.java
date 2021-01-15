@@ -13,5 +13,6 @@ public class BlockSoulBlock extends Block {
         this.setRegistryName("soul_block");
         this.setHarvestLevel("shovel",0);
         this.setHardness(0.5F);
+        this.setLightLevel(1F);
     }
 }
