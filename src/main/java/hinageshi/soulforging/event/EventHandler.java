@@ -77,27 +77,27 @@ public class EventHandler {
 
         //Specially handle BOSS's drop
         if(event.getName().getResourcePath().equals("entities/wither"))
-            LootUtils.addItemToTable(loot, ITEM_BROKEN_SOUL, 1, 1, 1, 7, 9, 0, 1, "soulforging:pure_soul");
+            LootUtils.addItemToTable(loot, ITEM_BROKEN_SOUL, 1, 1, 1, 7, 15, 0, 1, "soulforging:pure_soul");
         if(event.getName().getResourcePath().equals("entities/ender_dragon"))
-            LootUtils.addItemToTable(loot, ITEM_BROKEN_SOUL, 1, 1, 1, 7, 9, 0, 1, "soulforging:pure_soul");
+            LootUtils.addItemToTable(loot, ITEM_BROKEN_SOUL, 1, 1, 1, 7, 15, 0, 1, "soulforging:pure_soul");
         if(event.getName().getResourcePath().equals("entities/elder_guardian"))
-            LootUtils.addItemToTable(loot, ITEM_BROKEN_SOUL, 1, 1, 1, 1, 1, 0, 1, "soulforging:pure_soul");
+            LootUtils.addItemToTable(loot, ITEM_BROKEN_SOUL, 1, 1, 1, 7, 15, 0, 1, "soulforging:pure_soul");
         if(event.getName().getResourcePath().equals("entities/ghast"))
-            LootUtils.addItemToTable(loot, ITEM_BROKEN_SOUL, 1, 1, 1, 1, 1, 0, 1, "soulforging:pure_soul");
+            LootUtils.addItemToTable(loot, ITEM_BROKEN_SOUL, 1, 1, 1, 1, 5, 0, 1, "soulforging:pure_soul");
         if(event.getName().getResourcePath().equals("entities/wither_skeleton"))
-            LootUtils.addItemToTable(loot, ITEM_BROKEN_SOUL, 1, 1, 1, 0, 1, 0, 1, "soulforging:pure_soul");
+            LootUtils.addItemToTable(loot, ITEM_BROKEN_SOUL, 1, 1, 1, 1, 5, 0, 1, "soulforging:pure_soul");
     }
 
-    @SubscribeEvent
-    @SideOnly(Side.CLIENT)
-    public static void onPlayerJoin(EntityJoinWorldEvent event){
-        Entity entity=event.getEntity();
-        if(entity instanceof EntityPlayer){
-            String message="Welcome to SoulForging.";
-            TextComponentString text=new TextComponentString(message);
-            entity.sendMessage(text);
-        }
-    }
+//    @SubscribeEvent
+//    @SideOnly(Side.CLIENT)
+//    public static void onPlayerJoin(EntityJoinWorldEvent event){
+//        Entity entity=event.getEntity();
+//        if(entity instanceof EntityPlayer){
+//            String message="Welcome to SoulForging.";
+//            TextComponentString text=new TextComponentString(message);
+//            entity.sendMessage(text);
+//        }
+//    }
 
     @SubscribeEvent
     public static void onLivingDeath(LivingDeathEvent event){
