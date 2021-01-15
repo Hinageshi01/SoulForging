@@ -13,16 +13,15 @@ public class TabSoulForging extends CreativeTabs {
 
     @Override
     public ItemStack getTabIconItem() {
-        return new ItemStack(ItemRegistryHandler.ITEM_SOUL_BLOCK);
+        return new ItemStack(ItemRegistryHandler.ITEM_SOUL_GOLD);
     }
 
-    @Override
-    public boolean hasSearchBar(){
-        return true;
-    }
-
-    @Override
-    public int getSearchbarWidth(){
-        return 45;
-    }
+//    @Override
+//    public boolean hasSearchBar(){
+//        return true;
+//    }
+//    @Override
+//    public int getSearchbarWidth(){
+//        return 45;
+//    }
 }
