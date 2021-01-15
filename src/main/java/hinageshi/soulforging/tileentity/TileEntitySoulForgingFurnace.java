@@ -74,7 +74,7 @@ public class TileEntitySoulForgingFurnace extends TileEntity implements ITickabl
         Item coal= Items.COAL;
         boolean canExtractInput=coal.equals(this.down.extractItem(0,1,true).getItem());
         if(canExtractInput){
-            if(this.compressorProgress % 20 == 0){//Each 20 ticks
+            if(this.compressorProgress % 15 == 0){//Each 15 tick
                 Item soul= ItemRegistryHandler.ITEM_PURE_SOUL;
                 boolean canExtractSoul=soul.equals(this.left.extractItem(0,1,true).getItem());
                 if(canExtractSoul){
