@@ -71,13 +71,15 @@ public class TileEntitySoulForgingFurnace extends TileEntity implements ITickabl
 
     @Override
     public void update(){
+        Item soul = ItemRegistryHandler.ITEM_PURE_SOUL;
+        Item gold = Items.GOLD_INGOT;
         Item coal= Items.COAL;
-        boolean canExtractInput=coal.equals(this.down.extractItem(0,1,true).getItem());
-        if(canExtractInput){
+        boolean canExtractSoul = soul.equals(this.left.extractItem(0,1,true).getItem());
+        boolean canExtractGold = gold.equals(this.right.extractItem(0,1,true).getItem());
+        boolean canExtractCoal = coal.equals(this.down.extractItem(0,1,true).getItem());
+        if(canExtractSoul || canExtractGold || canExtractCoal){
             if(this.compressorProgress % 15 == 0){//Each 15 tick
-                Item soul= ItemRegistryHandler.ITEM_PURE_SOUL;
-                boolean canExtractSoul=soul.equals(this.left.extractItem(0,1,true).getItem());
-                if(canExtractSoul){
+                if(canExtractSoul && canExtractGold && canExtractCoal){
                     this.left.extractItem(0,1,false);
                     this.compressorProgress += 1;
                 }
@@ -87,7 +89,7 @@ public class TileEntitySoulForgingFurnace extends TileEntity implements ITickabl
                 if(this.compressorProgress >= 240){
                     ItemStack soulGold=new ItemStack(ItemRegistryHandler.ITEM_SOUL_GOLD);
                     boolean canInsertSoulGold=this.side.insertItem(0,soulGold,true).isEmpty();
-                    if(canInsertSoulGold){
+                    if(canInsertSoulGold && canExtractSoul && canExtractGold && canExtractCoal){
                         this.side.insertItem(0,soulGold,false);
                         this.right.extractItem(0,1,false);
                         this.down.extractItem(0,1,false);
