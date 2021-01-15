@@ -58,6 +58,7 @@ public class EventHandler {
         addItemToEntityTable(event,loot,"chicken",false);
         addItemToEntityTable(event,loot,"cow",false);
         addItemToEntityTable(event,loot,"iron_golem",false);
+        addItemToEntityTable(event,loot,"mushroom_cow",false);
         addItemToEntityTable(event,loot,"pig",false);
         addItemToEntityTable(event,loot,"sheep",false);
         addItemToEntityTable(event,loot,"snowman",false);
@@ -67,7 +68,6 @@ public class EventHandler {
         addItemToEntityTable(event,loot,"blaze",true);
         addItemToEntityTable(event,loot,"creeper",true);
         addItemToEntityTable(event,loot,"enderman",true);
-        addItemToEntityTable(event,loot,"ghast",true);
         addItemToEntityTable(event,loot,"silverfish",true);
         addItemToEntityTable(event,loot,"skeleton",true);
         addItemToEntityTable(event,loot,"slime",true);
@@ -76,10 +76,16 @@ public class EventHandler {
         addItemToEntityTable(event,loot,"zombie",true);
 
         //Specially handle BOSS's drop
-        if(event.getName().getResourcePath().equals("entities/elder_guardian"))
-            LootUtils.addItemToTable(loot, ITEM_BROKEN_SOUL, 1, 1, 1, 5, 9, 0, 1, "soulforging:pure_soul");
+        if(event.getName().getResourcePath().equals("entities/wither"))
+            LootUtils.addItemToTable(loot, ITEM_BROKEN_SOUL, 1, 1, 1, 7, 9, 0, 1, "soulforging:pure_soul");
         if(event.getName().getResourcePath().equals("entities/ender_dragon"))
-            LootUtils.addItemToTable(loot, ITEM_BROKEN_SOUL, 1, 1, 1, 5, 9, 0, 1, "soulforging:pure_soul");
+            LootUtils.addItemToTable(loot, ITEM_BROKEN_SOUL, 1, 1, 1, 7, 9, 0, 1, "soulforging:pure_soul");
+        if(event.getName().getResourcePath().equals("entities/elder_guardian"))
+            LootUtils.addItemToTable(loot, ITEM_BROKEN_SOUL, 1, 1, 1, 1, 1, 0, 1, "soulforging:pure_soul");
+        if(event.getName().getResourcePath().equals("entities/ghast"))
+            LootUtils.addItemToTable(loot, ITEM_BROKEN_SOUL, 1, 1, 1, 1, 1, 0, 1, "soulforging:pure_soul");
+        if(event.getName().getResourcePath().equals("entities/wither_skeleton"))
+            LootUtils.addItemToTable(loot, ITEM_BROKEN_SOUL, 1, 1, 1, 0, 1, 0, 1, "soulforging:pure_soul");
     }
 
     @SubscribeEvent
