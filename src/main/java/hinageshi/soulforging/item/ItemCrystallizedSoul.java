@@ -22,13 +22,17 @@ public class ItemCrystallizedSoul extends Item {
 
     @Override
     public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
-        ItemStack stack = new ItemStack(this);
+        ItemStack itemStack = new ItemStack(this);
+        ItemStack item = player.getHeldItem(hand);
 
-        if (!player.canPlayerEdit(pos.offset(facing), facing, stack)) {
+        if(!player.capabilities.isCreativeMode){
+            item.shrink(1);
+        }
+        if (!player.canPlayerEdit(pos.offset(facing), facing, itemStack)) {
             return EnumActionResult.FAIL;
         }
         else {
-            if (ItemDye.applyBonemeal(stack, worldIn, pos, player, hand)) {
+            if (ItemDye.applyBonemeal(itemStack, worldIn, pos, player, hand)) {
                 if (!worldIn.isRemote) {
                     worldIn.playEvent(2005, pos, 0);
                 }
