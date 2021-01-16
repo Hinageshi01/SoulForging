@@ -30,7 +30,7 @@ public class EventHandler {
     private static void addItemToEntityTable(LootTableLoadEvent event,LootTable loot,String entityName,boolean isMob){
         if(event.getName().getResourcePath().equals("entities/" + entityName)) {
             if(isMob){
-                LootUtils.addItemToTable(loot, ITEM_BROKEN_SOUL, 1, 1, 1, 1, 3, 0, 1, "soulforging:broken_soul", new LootUtils.IMethod() {
+                LootUtils.addItemToTable(loot, ITEM_BROKEN_SOUL, 1, 1, 1, 0, 2, 0, 1, "soulforging:broken_soul", new LootUtils.IMethod() {
                         @Override
                         public void FunctionsCallback(ArrayList<LootFunction> lootfuncs) {
                             LootFunction looting= new LootingEnchantBonus(null, new RandomValueRange(0,1),0);
@@ -40,7 +40,7 @@ public class EventHandler {
                 );
             }
             else {
-                LootUtils.addItemToTable(loot, ITEM_INNOCENT_SOUL, 1, 1, 1, 1, 3, 0, 1, "soulforging:innocent_soul", new LootUtils.IMethod() {
+                LootUtils.addItemToTable(loot, ITEM_INNOCENT_SOUL, 1, 1, 1, 0, 2, 0, 1, "soulforging:innocent_soul", new LootUtils.IMethod() {
                         @Override
                         public void FunctionsCallback(ArrayList<LootFunction> lootfuncs) {
                             LootFunction looting= new LootingEnchantBonus(null, new RandomValueRange(1,3),0);
@@ -57,36 +57,61 @@ public class EventHandler {
         LootTable loot = event.getTable();
         addItemToEntityTable(event,loot,"chicken",false);
         addItemToEntityTable(event,loot,"cow",false);
+        addItemToEntityTable(event,loot,"horse",false);
+        addItemToEntityTable(event,loot,"llama",false);
         addItemToEntityTable(event,loot,"iron_golem",false);
+        addItemToEntityTable(event,loot,"mule",false);
         addItemToEntityTable(event,loot,"mushroom_cow",false);
+        addItemToEntityTable(event,loot,"ocelot",false);
+        addItemToEntityTable(event,loot,"parrot",false);
         addItemToEntityTable(event,loot,"pig",false);
+        addItemToEntityTable(event,loot,"polar_bear",false);
+        addItemToEntityTable(event,loot,"rabbit",false);
         addItemToEntityTable(event,loot,"sheep",false);
         addItemToEntityTable(event,loot,"snowman",false);
+        addItemToEntityTable(event,loot,"squid",false);
         addItemToEntityTable(event,loot,"villager",false);
         addItemToEntityTable(event,loot,"wolf",false);
+        addItemToEntityTable(event,loot,"zombie_villager",false);
 
         addItemToEntityTable(event,loot,"blaze",true);
+        addItemToEntityTable(event,loot,"cave_spider",true);
         addItemToEntityTable(event,loot,"creeper",true);
+        addItemToEntityTable(event,loot,"drowned",true);
         addItemToEntityTable(event,loot,"enderman",true);
+        addItemToEntityTable(event,loot,"endermite",true);
+        addItemToEntityTable(event,loot,"evocation_illager",true);
+        addItemToEntityTable(event,loot,"husk",true);
+        addItemToEntityTable(event,loot,"magma_cube",true);
+        addItemToEntityTable(event,loot,"shulker",true);
         addItemToEntityTable(event,loot,"silverfish",true);
         addItemToEntityTable(event,loot,"skeleton",true);
         addItemToEntityTable(event,loot,"slime",true);
         addItemToEntityTable(event,loot,"spider",true);
+        addItemToEntityTable(event,loot,"stray",true);
+        addItemToEntityTable(event,loot,"vex",true);
+        addItemToEntityTable(event,loot,"vindication_illager",true);
         addItemToEntityTable(event,loot,"witch",true);
         addItemToEntityTable(event,loot,"zombie",true);
 
         //Specially handle BOSS's drop
         if(event.getName().getResourcePath().equals("entities/wither"))
-            LootUtils.addItemToTable(loot, ITEM_BROKEN_SOUL, 1, 1, 1, 7, 15, 0, 1, "soulforging:pure_soul");
+            LootUtils.addItemToTable(loot, ITEM_BROKEN_SOUL, 1, 1, 1, 9, 15, 0, 1, "soulforging:pure_soul");
         if(event.getName().getResourcePath().equals("entities/ender_dragon"))
-            LootUtils.addItemToTable(loot, ITEM_BROKEN_SOUL, 1, 1, 1, 7, 15, 0, 1, "soulforging:pure_soul");
+            LootUtils.addItemToTable(loot, ITEM_BROKEN_SOUL, 1, 1, 1, 9, 15, 0, 1, "soulforging:pure_soul");
         if(event.getName().getResourcePath().equals("entities/elder_guardian"))
-            LootUtils.addItemToTable(loot, ITEM_BROKEN_SOUL, 1, 1, 1, 7, 15, 0, 1, "soulforging:pure_soul");
+            LootUtils.addItemToTable(loot, ITEM_BROKEN_SOUL, 1, 1, 1, 9, 15, 0, 1, "soulforging:pure_soul");
         if(event.getName().getResourcePath().equals("entities/ghast"))
-            LootUtils.addItemToTable(loot, ITEM_BROKEN_SOUL, 1, 1, 1, 1, 5, 0, 1, "soulforging:pure_soul");
+            LootUtils.addItemToTable(loot, ITEM_BROKEN_SOUL, 1, 1, 1, 1, 2, 0, 1, "soulforging:pure_soul");
         if(event.getName().getResourcePath().equals("entities/wither_skeleton"))
-            LootUtils.addItemToTable(loot, ITEM_BROKEN_SOUL, 1, 1, 1, 1, 5, 0, 1, "soulforging:pure_soul");
-    }
+            LootUtils.addItemToTable(loot, ITEM_BROKEN_SOUL, 1, 1, 1, 1, 2, 0, 1, "soulforging:pure_soul");
+        if(event.getName().getResourcePath().equals("entities/skeleton_horse"))
+            LootUtils.addItemToTable(loot, ITEM_BROKEN_SOUL, 1, 1, 1, 1, 2, 0, 1, "soulforging:pure_soul");
+        if(event.getName().getResourcePath().equals("entities/zombie_horse"))
+            LootUtils.addItemToTable(loot, ITEM_BROKEN_SOUL, 1, 1, 1, 1, 2, 0, 1, "soulforging:pure_soul");
+        if(event.getName().getResourcePath().equals("entities/zombie_pigman"))
+            LootUtils.addItemToTable(loot, ITEM_BROKEN_SOUL, 1, 1, 1, 1, 2, 0, 1, "soulforging:pure_soul");
+        }
 
 //    @SubscribeEvent
 //    @SideOnly(Side.CLIENT)
