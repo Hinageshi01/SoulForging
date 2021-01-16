@@ -78,6 +78,12 @@ public class TileEntitySoulForgingFurnace extends TileEntity implements ITickabl
         boolean canExtractGold = gold.equals(this.right.extractItem(0,1,true).getItem());
         boolean canExtractCoal = coal.equals(this.down.extractItem(0,1,true).getItem());
         if(canExtractSoul || canExtractGold || canExtractCoal){
+            if(this.compressorProgress == 0){
+                if(canExtractSoul && canExtractGold && canExtractCoal){
+                    this.down.extractItem(0,1,false);
+                }
+            }
+
             if(this.compressorProgress % 15 == 0){//Each 15 tick
                 if(canExtractSoul && canExtractGold && canExtractCoal){
                     this.left.extractItem(0,1,false);
@@ -89,10 +95,9 @@ public class TileEntitySoulForgingFurnace extends TileEntity implements ITickabl
                 if(this.compressorProgress >= 240){
                     ItemStack soulGold=new ItemStack(ItemRegistryHandler.ITEM_SOUL_GOLD);
                     boolean canInsertSoulGold=this.side.insertItem(0,soulGold,true).isEmpty();
-                    if(canInsertSoulGold && canExtractSoul && canExtractGold && canExtractCoal){
+                    if(canInsertSoulGold && canExtractGold){
                         this.side.insertItem(0,soulGold,false);
                         this.right.extractItem(0,1,false);
-                        this.down.extractItem(0,1,false);
                         this.compressorProgress = 0;
                     }
                     else {
