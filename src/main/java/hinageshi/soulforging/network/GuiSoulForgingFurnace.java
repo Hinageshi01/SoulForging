@@ -1,10 +1,13 @@
 package hinageshi.soulforging.network;
 
 import hinageshi.soulforging.SoulForging;
+import hinageshi.soulforging.tileentity.TileEntitySoulForgingFurnace;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
@@ -29,22 +32,24 @@ public class GuiSoulForgingFurnace extends GuiContainer {
 
     @Override
     protected void drawGuiContainerBackgroundLayer(float partialTicks,int mouseX,int mouseY){
-        int left=(this.width-this.xSize)/2;
-        int top=(this.height-this.ySize)/2;
+        int left = (this.width - this.xSize) / 2;
+        int top = (this.height - this.ySize) / 2;
         GlStateManager.color(1.0F,1.0F,1.0F,1.0F);
         this.mc.getTextureManager().bindTexture(TEXTURE);
-        this.drawTexturedModalRect(left+0,top+0,0,0,this.xSize,this.ySize);
+        this.drawTexturedModalRect(left+0,top+0,0,0, this.xSize, this.ySize);
 
-        int barHeight=17;
-        int barWidth=Math.round(((ContainerSoulForgingFurnace) this.inventorySlots).getCompressorProgress() * 0.1F);
-        int barHeightFire=14-Math.round(((ContainerSoulForgingFurnace) this.inventorySlots).getCompressorProgress() * 0.0583333333333F);//14->0
-        this.drawTexturedModalRect(left+89,top+38,176,14,barWidth,barHeight);
-        this.drawTexturedModalRect(left+44,top+38+barHeightFire,176,barHeightFire,14,14-barHeightFire);
+        int barHeight = 17;
+        int barWidth = Math.round(((ContainerSoulForgingFurnace) this.inventorySlots).getCompressorProgress() * 0.1F);
+        int barHeightFire;//0->14
+        barHeightFire = Math.round(((ContainerSoulForgingFurnace) this.inventorySlots).getCompressorProgress() * 0.0583333333333F);
+        this.drawTexturedModalRect(left + 89,top + 38,176,14, barWidth, barHeight);
+        if(Math.round(((ContainerSoulForgingFurnace) this.inventorySlots).getCompressorProgress())>0)
+        this.drawTexturedModalRect(left + 44,top + 38 + barHeightFire,176, barHeightFire,14,14 - barHeightFire);
     }
 
     @Override
     protected void drawGuiContainerForegroundLayer(int mouseX,int mouseY){
         String text= I18n.format("tile.soulforging.soulForgingFurnace.name");
-        this.drawCenteredString(this.fontRenderer,text,this.xSize/2,6,0x00404040);
+        this.drawCenteredString(this.fontRenderer,text,this.xSize / 2,6,0x00404040);
     }
 }
