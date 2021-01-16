@@ -21,7 +21,7 @@ import net.minecraftforge.registries.IForgeRegistry;
 @EventBusSubscriber
 public class ItemRegistryHandler {
     public static final Item.ToolMaterial SOUL_TOOL_MATERIAL= EnumHelper.addToolMaterial("SOUL",2,131,4.0F,1.0F, 5);
-    public static final Item.ToolMaterial SOUL_GOLD_TOOL_MATERIAL= EnumHelper.addToolMaterial("SOUL_GOLD",3,1561,12.0F,6.5F, 44);//Diamond's maxUse is 1561, gold's efficiency is 11.25, gold's enchantability is 22
+    public static final Item.ToolMaterial SOUL_GOLD_TOOL_MATERIAL= EnumHelper.addToolMaterial("SOUL_GOLD",3,1561,12.0F,8.0F, 44);//Diamond's maxUse is 1561, gold's efficiency is 11.25, gold's enchantability is 22
     public static final ItemSoulPickaxe SOUL_PICKAXE=new ItemSoulPickaxe();
     public static final ItemSoulGoldSword SOUL_GOLD_SWORD=new ItemSoulGoldSword();
 
