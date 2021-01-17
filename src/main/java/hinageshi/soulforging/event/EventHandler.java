@@ -6,24 +6,21 @@ import hinageshi.soulforging.uitl.LootUtils;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.MobEffects;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.text.TextComponentString;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.storage.loot.LootTable;
 import net.minecraft.world.storage.loot.RandomValueRange;
 import net.minecraft.world.storage.loot.functions.LootFunction;
 import net.minecraft.world.storage.loot.functions.LootingEnchantBonus;
 import net.minecraftforge.event.LootTableLoadEvent;
-import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.ArrayList;
 
-import static hinageshi.soulforging.item.ItemRegistryHandler.ITEM_BROKEN_SOUL;
-import static hinageshi.soulforging.item.ItemRegistryHandler.ITEM_INNOCENT_SOUL;
+import static hinageshi.soulforging.item.ItemRegistryHandler.*;
 
 @EventBusSubscriber
 public class EventHandler {
@@ -55,6 +52,7 @@ public class EventHandler {
     @SubscribeEvent
     public static void onLootLoad(LootTableLoadEvent event){
         LootTable loot = event.getTable();
+
         addItemToEntityTable(event,loot,"chicken",false);
         addItemToEntityTable(event,loot,"cow",false);
         addItemToEntityTable(event,loot,"horse",false);
@@ -77,11 +75,11 @@ public class EventHandler {
         addItemToEntityTable(event,loot,"blaze",true);
         addItemToEntityTable(event,loot,"cave_spider",true);
         addItemToEntityTable(event,loot,"creeper",true);
-        addItemToEntityTable(event,loot,"drowned",true);
         addItemToEntityTable(event,loot,"enderman",true);
         addItemToEntityTable(event,loot,"endermite",true);
         addItemToEntityTable(event,loot,"evocation_illager",true);
         addItemToEntityTable(event,loot,"husk",true);
+        addItemToEntityTable(event,loot,"ghast",true);
         addItemToEntityTable(event,loot,"magma_cube",true);
         addItemToEntityTable(event,loot,"shulker",true);
         addItemToEntityTable(event,loot,"silverfish",true);
@@ -92,26 +90,27 @@ public class EventHandler {
         addItemToEntityTable(event,loot,"vex",true);
         addItemToEntityTable(event,loot,"vindication_illager",true);
         addItemToEntityTable(event,loot,"witch",true);
+        addItemToEntityTable(event,loot,"wither_skeleton",true);
         addItemToEntityTable(event,loot,"zombie",true);
+        addItemToEntityTable(event,loot,"zombie_pigman",true);
 
         //Specially handle BOSS's drop
         if(event.getName().getResourcePath().equals("entities/wither"))
-            LootUtils.addItemToTable(loot, ITEM_BROKEN_SOUL, 1, 1, 1, 9, 15, 0, 1, "soulforging:pure_soul");
+            LootUtils.addItemToTable(loot, ITEM_PURE_SOUL, 1, 1, 1, 9, 15, 0, 1, "soulforging:pure_soul");
         if(event.getName().getResourcePath().equals("entities/ender_dragon"))
-            LootUtils.addItemToTable(loot, ITEM_BROKEN_SOUL, 1, 1, 1, 9, 15, 0, 1, "soulforging:pure_soul");
+            LootUtils.addItemToTable(loot, ITEM_PURE_SOUL, 1, 1, 1, 9, 15, 0, 1, "soulforging:pure_soul");
         if(event.getName().getResourcePath().equals("entities/elder_guardian"))
-            LootUtils.addItemToTable(loot, ITEM_BROKEN_SOUL, 1, 1, 1, 9, 15, 0, 1, "soulforging:pure_soul");
+            LootUtils.addItemToTable(loot, ITEM_PURE_SOUL, 1, 1, 1, 9, 15, 0, 1, "soulforging:pure_soul");
+
         if(event.getName().getResourcePath().equals("entities/ghast"))
-            LootUtils.addItemToTable(loot, ITEM_BROKEN_SOUL, 1, 1, 1, 1, 2, 0, 1, "soulforging:pure_soul");
+            LootUtils.addItemToTable(loot, ITEM_PURE_SOUL, 1, 1, 1, 1, 1, 0, 1, "soulforging:pure_soul");
         if(event.getName().getResourcePath().equals("entities/wither_skeleton"))
-            LootUtils.addItemToTable(loot, ITEM_BROKEN_SOUL, 1, 1, 1, 1, 2, 0, 1, "soulforging:pure_soul");
-        if(event.getName().getResourcePath().equals("entities/skeleton_horse"))
-            LootUtils.addItemToTable(loot, ITEM_BROKEN_SOUL, 1, 1, 1, 1, 2, 0, 1, "soulforging:pure_soul");
-        if(event.getName().getResourcePath().equals("entities/zombie_horse"))
-            LootUtils.addItemToTable(loot, ITEM_BROKEN_SOUL, 1, 1, 1, 1, 2, 0, 1, "soulforging:pure_soul");
+            LootUtils.addItemToTable(loot, ITEM_PURE_SOUL, 1, 1, 1, 1, 1, 0, 1, "soulforging:pure_soul");
         if(event.getName().getResourcePath().equals("entities/zombie_pigman"))
-            LootUtils.addItemToTable(loot, ITEM_BROKEN_SOUL, 1, 1, 1, 1, 2, 0, 1, "soulforging:pure_soul");
-        }
+            LootUtils.addItemToTable(loot, ITEM_PURE_SOUL, 1, 1, 1, 1, 1, 0, 1, "soulforging:pure_soul");
+        if(event.getName().getResourcePath().equals("entities/enderman"))
+            LootUtils.addItemToTable(loot, ITEM_PURE_SOUL, 1, 1, 1, 1, 1, 0, 1, "soulforging:pure_soul");
+    }
 
 //    @SubscribeEvent
 //    @SideOnly(Side.CLIENT)
@@ -126,14 +125,14 @@ public class EventHandler {
 
     @SubscribeEvent
     public static void onLivingDeath(LivingDeathEvent event){
-        Entity source =event.getSource().getImmediateSource();
+        Entity source = event.getSource().getImmediateSource();
         if(source instanceof EntityPlayer && !source.world.isRemote){
-            EntityPlayer player=(EntityPlayer) source;
-            ItemStack heldItemMainhand=player.getHeldItemMainhand();
-            int level= EnchantmentHelper.getEnchantmentLevel(EnchantmentRegistryHandler.SOUL_BLAST,heldItemMainhand);
-            if(level > 0){
-                Entity target=event.getEntity();
-                target.world.createExplosion(null,target.posX,target.posY,target.posZ,level,false);
+            EntityPlayer player = (EntityPlayer) source;
+            ItemStack heldItemMainhand = player.getHeldItemMainhand();
+            int level = EnchantmentHelper.getEnchantmentLevel(EnchantmentRegistryHandler.SOUL_STEAL,heldItemMainhand);
+            if(level > 0 && level < 4){
+                player.addPotionEffect(new PotionEffect(MobEffects.REGENERATION, 30, level-1));
+                player.addExperience(level);
             }
         }
     }
