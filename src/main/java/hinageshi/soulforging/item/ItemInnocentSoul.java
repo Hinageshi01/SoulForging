@@ -11,9 +11,9 @@ import net.minecraft.world.World;
 
 public class ItemInnocentSoul extends ItemFood {
     public ItemInnocentSoul(){
-        super(10,0.8F,false);
+        super(8,0.8F,false);
         this.setPotionEffect(new PotionEffect(MobEffects.WITHER,180,2), 0.1F);
-        this.setAlwaysEdible();
+        //this.setAlwaysEdible();
         this.setUnlocalizedName(SoulForging.MODID + ".innocentSoul");
         this.setCreativeTab(TabSoulForging.TAB_SOUL_FORGING);
         this.setRegistryName("innocent_soul");
@@ -25,7 +25,7 @@ public class ItemInnocentSoul extends ItemFood {
     {
         if (!worldIn.isRemote)
         {
-            player.addPotionEffect(new PotionEffect(MobEffects.NAUSEA, 120, 1));
+            player.addPotionEffect(new PotionEffect(MobEffects.NAUSEA, 110, 1));
             player.addExperience(20);
         }
         super.onFoodEaten(stack, worldIn, player);
