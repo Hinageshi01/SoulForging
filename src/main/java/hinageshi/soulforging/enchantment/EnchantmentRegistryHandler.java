@@ -8,11 +8,11 @@ import net.minecraftforge.registries.IForgeRegistry;
 
 @EventBusSubscriber
 public class EnchantmentRegistryHandler {
-    public static final EnchantmentSoulBlast SOUL_BLAST =new EnchantmentSoulBlast();
+    public static final EnchantmentSoulSteal SOUL_STEAL =new EnchantmentSoulSteal();
 
     @SubscribeEvent
     public static void onRegistry(Register<Enchantment> event){
         IForgeRegistry<Enchantment> registry=event.getRegistry();
-        registry.register(SOUL_BLAST);
+        registry.register(SOUL_STEAL);
     }
 }

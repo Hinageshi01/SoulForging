@@ -15,7 +15,7 @@ item.soulforging.soulGoldArmor.head.name=Soul Gold Helmet
 tile.soulforging.soulBlock.name=Soul Block
 tile.soulforging.soulForgingFurnace.name=Soul Furnace
 
-enchantment.soulforging.soulBlast=Soul Blast
+enchantment.soulforging.soulSteal=Soul Steal
 
 entity.soulforging.Dementor.name=Dementor
 
