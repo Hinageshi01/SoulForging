@@ -12,8 +12,8 @@ import net.minecraft.world.World;
 public class ItemInnocentSoul extends ItemFood {
     public ItemInnocentSoul() {
         super(8,0.8F,false);
-        this.setPotionEffect(new PotionEffect(MobEffects.WITHER,160,2), 1F);
-        this.setAlwaysEdible();
+        this.setPotionEffect(new PotionEffect(MobEffects.WITHER,160,2), 0.1F);
+        //this.setAlwaysEdible();
         this.setUnlocalizedName(SoulForging.MODID + ".innocentSoul");
         this.setCreativeTab(TabSoulForging.TAB_SOUL_FORGING);
         this.setRegistryName("innocent_soul");
