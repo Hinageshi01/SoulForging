@@ -7,7 +7,7 @@ import net.minecraft.inventory.EntityEquipmentSlot;
 
 public class EnchantmentSoulSteal extends Enchantment {
     public EnchantmentSoulSteal(){
-        super(Rarity.RARE, EnumEnchantmentType.WEAPON,new EntityEquipmentSlot[] {EntityEquipmentSlot.MAINHAND});
+        super(Rarity.UNCOMMON, EnumEnchantmentType.WEAPON,new EntityEquipmentSlot[] {EntityEquipmentSlot.MAINHAND});
         this.setName(SoulForging.MODID + ".soulSteal");
         this.setRegistryName("soulSteal");
     }
