@@ -150,8 +150,9 @@ public class ModelDementor extends ModelBase {
 		l4.rotateAngleX = A1 * MathHelper.cos(limbSwing * w1 + pi) * limbSwingAmount;
 
 		//Body creep
-		head.rotateAngleY = A2 * MathHelper.cos(ageInTicks * w2 + pi * 1/5);
 		//head.rotateAngleZ=(float)(ageInTicks % (2 * pi));//Just for fun
+		head.rotateAngleY = A2 * MathHelper.cos(ageInTicks * w2 + pi * 1/5);
+
 		b1.rotateAngleY = A2 * MathHelper.cos(ageInTicks * w2 + pi * 2/5);
 
 		b2.rotateAngleY = A2 * MathHelper.cos(ageInTicks * w2 + pi * 3/5);
