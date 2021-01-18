@@ -24,7 +24,7 @@ public class EntityDementor extends EntityMob {
     public static final String ID = "dementor";
     public static final String NAME = SoulForging.MODID + ".Dementor";
     private static final UUID SPEED_BOOST = UUID.fromString("e0b89eca-304c-460c-a19b-fcde3b5944ba");
-    public static final Biome[] BIOMES = new Biome[]{Biomes.PLAINS,Biomes.HELL,Biomes.FOREST,Biomes.SWAMPLAND,Biomes.RIVER,Biomes.JUNGLE,Biomes.DESERT,Biomes.TAIGA};//spawn environment
+    public static final Biome[] BIOMES = new Biome[]{Biomes.PLAINS,Biomes.HELL,Biomes.FOREST,Biomes.SWAMPLAND,Biomes.RIVER,Biomes.JUNGLE,Biomes.DESERT,Biomes.TAIGA,Biomes.BEACH};//spawn environment
     private static final ResourceLocation LOOT_TABLE = LootTableList.register(new ResourceLocation(SoulForging.MODID+":entities/dementor"));
 
     public EntityDementor(World worldIn){
