@@ -25,7 +25,7 @@ public class ItemRegistryHandler {
     public static final ItemSoulPickaxe SOUL_PICKAXE=new ItemSoulPickaxe();
     public static final ItemSoulGoldSword SOUL_GOLD_SWORD=new ItemSoulGoldSword();
 
-    public static final ItemArmor.ArmorMaterial SOUL_GOLD_ARMOR_MATERIAL=EnumHelper.addArmorMaterial("SOUL_GOLD", SoulForging.MODID + ":soul_gold",50, new int[] {4,7,9,4},9, SoundEvents.ITEM_ARMOR_EQUIP_GOLD,3);
+    public static final ItemArmor.ArmorMaterial SOUL_GOLD_ARMOR_MATERIAL=EnumHelper.addArmorMaterial("SOUL_GOLD", SoulForging.MODID + ":soul_gold",50, new int[] {4,7,9,4},9, SoundEvents.ITEM_ARMOR_EQUIP_GOLD,3);//Diamond provides {3,6,8,3} armor
     public static final ItemSoulGoldArmor SOUL_GOLD_BOOTS=new ItemSoulGoldArmor(EntityEquipmentSlot.FEET);
     public static final ItemSoulGoldArmor SOUL_GOLD_LEGGINGS=new ItemSoulGoldArmor(EntityEquipmentSlot.LEGS);
     public static final ItemSoulGoldArmor SOUL_GOLD_CHESTPLATE=new ItemSoulGoldArmor(EntityEquipmentSlot.CHEST);
