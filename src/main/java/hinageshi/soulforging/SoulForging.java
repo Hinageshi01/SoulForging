@@ -17,7 +17,7 @@ public class SoulForging
 {
     public static final String MODID = "soulforging";
     public static final String NAME = "SoulForging";
-    public static final String VERSION = "1.0.0";
+    public static final String VERSION = "1.0.1";
     private static Logger logger;
 
     @EventHandler

@@ -2,7 +2,7 @@
 {
   "modid": "soulforging",
   "name": "SoulForging",
-  "description": "A separate mod of souls and metals.",
+  "description": "A independent mod of souls and metals.",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "",
