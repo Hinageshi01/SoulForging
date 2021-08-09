@@ -20,3 +20,5 @@ enchantment.soulforging.soulSteal=Soul Steal
 entity.soulforging.Dementor.name=Dementor
 
 itemGroup.soulforging=SoulForging
+
+entity.Villager.soulforging.ferryman=Ferryman

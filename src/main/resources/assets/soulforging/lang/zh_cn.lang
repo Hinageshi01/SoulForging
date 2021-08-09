@@ -20,3 +20,5 @@ enchantment.soulforging.soulSteal=灵魂汲取
 entity.soulforging.Dementor.name=噬魂怪
 
 itemGroup.soulforging=SoulForging
+
+entity.Villager.soulforging.ferryman=摆渡人
